@@ -141,7 +141,7 @@ function createResultsHTML(n: number, r: number, m: number, k: number): string {
               <tr>
                 <td class="formula-cell">Full Sequence</td>
                 <td>$A(${m}, 0)$ to $A(${m}, ${m - 1})$</td>
-                <td class="sequence-values">${eulerianResults.sequence.map(formatNumber).join(', ')}</td>
+                <td class="sequence-values">${formatSequence(eulerianResults.sequence, k)}</td>
                 <td class="interpretation-cell">Number of permutations of ${m} elements with exactly k descents (k from 0 to ${m - 1})</td>
               </tr>
               <tr>
@@ -172,7 +172,7 @@ function createResultsHTML(n: number, r: number, m: number, k: number): string {
               <tr>
                 <td class="formula-cell">Sequence</td>
                 <td>$S(${m}, 1)$ to $S(${m}, ${n})$</td>
-                <td class="sequence-values">${stirlingResults.map(formatNumber).join(', ')}</td>
+                <td class="sequence-values">${formatSequence(stirlingResults, n - 1)}</td>
                 <td class="interpretation-cell">Number of ways to partition ${m} distinct objects into k non-empty indistinguishable subsets (k from 1 to ${n})</td>
               </tr>
               <tr>
@@ -332,6 +332,9 @@ function initApp() {
       });
     }
   });
+
+  // Trigger calculate on page load
+  handleCalculate();
 }
 
 // Wait for KaTeX to load
