@@ -48,6 +48,17 @@ Preview the production build:
 npm run preview
 ```
 
+## GitHub Pages Deployment
+
+This project is automatically deployed to GitHub Pages on every push to the main branch. You can view the live application at:
+
+[https://whats2000.github.io/CombinatorialCalculator/](https://whats2000.github.io/CombinatorialCalculator/)
+
+The deployment is handled by GitHub Actions workflow that:
+- Builds the application using Vite
+- Deploys the built files to GitHub Pages
+- Updates the live site automatically
+
 ## Technologies Used
 
 - **TypeScript**: For type-safe JavaScript development
