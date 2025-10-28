@@ -123,7 +123,7 @@ export function lucas(n: number): number {
  * @returns Eulerian number A(m, k)
  */
 export function eulerian(m: number, k: number): number {
-  if (k < 0 || k >= m) return 0;
+  if (m < 0 || k < 0 || (m > 0 && k >= m)) return 0;
   if (m === 0) return 1;
   
   // Use dynamic programming
